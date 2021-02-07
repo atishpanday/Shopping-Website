@@ -1,0 +1,273 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: 'yusei-magic';
+    src: url('Fonts/Yusei_Magic/YuseiMagic-Regular.ttf');
+}
+@font-face{
+    font-family: 'playfair';
+    src: url('Fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf');
+}
+@font-face{
+    font-family: "poppins";
+    src: url("Fonts/Poppins-Thin.ttf");
+}
+body{
+    background: #f6ecf3;
+}
+.menu{
+    display: flex;
+    height: 80px;
+    width: 55%;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+}
+.home, .store, .about-us{
+    cursor: pointer;
+    width: fit-content;
+    font-size: 20px;
+    font-family: "yusei-magic";
+}
+.home a, .store a, .about-us a{
+    text-decoration: none;
+    color: #9f4b8f;
+    transition: color 0.3s;
+}
+.home:hover a, .store:hover a, .about-us:hover a{
+    color: pink;
+}
+.logo{
+    position: fixed;
+    left: 0px;
+    top: -50px;
+}
+.logo img{
+    height: 200px;
+    width: 200px;
+}
+.cart{
+    position: fixed;
+    height: 0px;
+    width: 0px;
+    background: #fff;
+    top: 20px;
+    right: 20px;
+    transition: transform 0.5s;
+    z-index: 2;
+}
+.cart-empty{
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transition: all 0.3s;
+}
+.cart:hover .cart-empty{
+    transform: rotate(360deg);
+}
+.cart-filled{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    pointer-events: none;
+    display: none;
+    transition: all 0.3s;
+}
+.cross{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+}
+.inside-cart{
+    position: fixed;
+    top: 0px;
+    right: -400px;
+    padding-top: 80px;
+    height: 100vh;
+    width: 400px;
+    background: #fff;
+    border-radius: 7px;
+    transition: 0.4s;
+}
+.cart-items{
+    position: relative;
+    color: #9f4b8f;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 80px;
+    width: 400px;
+    border-radius: 7px;
+    border: 2px solid black;
+    background: #f6ecf3;
+    display: flex;
+}
+.cart-items-img{
+    width: 76px;
+    height: 76px;
+    position: absolute;
+    left: 0px;
+    border-radius: 7px;
+}
+.cart-item-name{
+    position: absolute;
+    left: 78px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.item-price-tag{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.inside-cart .no-items{
+    position: absolute;
+    text-align: center;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    font-weight: 50;
+    font-family: "poppins";
+}
+.inside-cart .pay{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 5%;
+    opacity: 0;
+}
+.pay-button{
+    padding: 10px;
+    border: 2px solid black;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    background: #f6ecf3;
+    pointer-events: none;
+}
+.total-amount{
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+    font-size: 30px;
+    opacity: 0;
+}
+.gallery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+}
+.gallery .img{
+    height: 300px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 7px;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.img1{
+    background-image: url("Images/choco-butter.png");
+    background-size: contain;
+}
+.img2{
+    background-image: url("Images/peanut-butter.png");
+    background-size: contain;
+}
+.img3{
+    background-image: url("Images/almond-butter.jpg");
+    background-size: contain;
+}
+.img4{
+    background-image: url("Images/cashew-butter.jpg");
+    background-size: contain;
+}
+.gallery .img .item-name{
+    font-size: 22px;
+    width: 100%;
+    border-radius: 7px;
+    text-align: center;
+    color: #9f4b8f;
+    background: #f6ecf3;
+    opacity: 0;
+    transition: 0.6s;
+    font-family: "yusei-magic";
+}
+.img1:hover .item-name1,
+.img2:hover .item-name2,
+.img3:hover .item-name3,
+.img4:hover .item-name4
+{
+    opacity: 0.95;
+}
+.item-price{
+    width: 300px;
+    font-size: 18px;
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;;
+    border-radius: 5px;
+    font-family: 'playfair';
+}
+.item-price .add-to-cart{
+    width: 100px;
+    height: 40px;
+    background: #f6ecf3;
+    cursor: pointer;
+    font-size: 16px;
+    color: #9f4b8f;
+    border: 2px solid #9f4b8f;
+    transition: 0.4s;
+    text-decoration: none;
+}
+.item-price .add-to-cart:hover{
+    background: #9f4b8f;
+    color: #f6ecf3;
+}
+.quantity{
+    height: 40px;
+    width: 50px;
+    font-size: 25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid grey;
+}
+.plus, .minus{
+    height: 40px;
+    width: 20px;
+    font-size: 30px;
+}
+.socials{
+    margin-top: 50px;
+    height: 220px;
+    width: 100%;
+    background: rgba(159,75,143,0.6);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 1;
+}
+.gmail-logo{
+    width: 80px;
+    height: 80px;
+}
+.insta-logo{
+    width: 80px;
+    height: 80px;
+}

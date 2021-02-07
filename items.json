@@ -1,0 +1,24 @@
+{
+    "products": [
+        {
+            "itemName" : "Chocolate Hazelnut Butter",
+            "itemId" : 1,
+            "itemPrice" : 649
+        },
+        {
+            "itemName" : "Peanut Butter",
+            "itemId" : 2,
+            "itemPrice" : 649
+        },
+        {
+            "itemName" : "Almond Butter",
+            "itemId" : 3,
+            "itemPrice" : 649
+        },
+        {
+            "itemName" : "Cashew Butter",
+            "itemId" : 4,
+            "itemPrice" : 649
+        }
+    ]
+}
